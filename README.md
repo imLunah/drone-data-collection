@@ -1,4 +1,4 @@
-#### to run
+#### RUNNING ON LOCAL MACHINE
 
 `pip install Flask`
 

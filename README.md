@@ -6,6 +6,8 @@
 
 `pip install aiortc`
 
+`pip install socket-io`
+
 `cd src`
 
 `python server.py`

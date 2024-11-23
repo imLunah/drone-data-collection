@@ -6,6 +6,6 @@
 
 `pip install aiortc`
 
-`cd src;
+'cd src'
 
 `python server.py`

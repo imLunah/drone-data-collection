@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-Time Counter</title>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const socket = io();
+
+        // Handle counter updates
+        socket.on("update_counter", (data) => {
+          document.getElementById(
+            "counter"
+          ).innerText = `Counter: ${data.counter}`;
+        });
+
+        // Send increment event to server
+        document.getElementById("increment").addEventListener("click", () => {
+          socket.emit("increment");
+        });
+
+        // Send decrement event to server
+        document.getElementById("decrement").addEventListener("click", () => {
+          socket.emit("decrement");
+        });
+
+        socket.on("update_realtime", (data) => {
+          document.getElementById(
+            'realtime'
+          ).innerText = `2secounds: ${data.realtime}`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Real-Time Counter</h1>
+    <p id="counter">Counter: 0</p>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+    <p id="realtime">2SECOUNDS: 0</p>
+  </body>
+</html>

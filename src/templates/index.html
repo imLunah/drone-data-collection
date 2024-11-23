@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="/static/main.js"></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>I LOVE NGCP</title>
+  </head>
+  <body>
+    <h1>Real-Time Data</h1>
+    <div class="container">
+      <div class="image-container">
+        <img src="{{ url_for('video_feed') }}" alt="Video Feed" />
+      </div>
+
+      <div class="data-container">
+        <p>Flight Mode: <span id="FlightMode">--</span></p>
+        <p>GPS Data: <span id="GPSdata">--</span></p>
+        <p>RC signal strength: <span id="RCsignalstrength">--</span></p>
+        <p>Speed: <span id="Speed">--</span></p>
+        <p>Altitide: <span id="Altitude">--</span></p>
+        <p>Roll: <span id="Roll">--</span></p>
+        <p>Pitch: <span id="Pitch">--</span></p>
+        <p>Yaw: <span id="Yaw">--</span></p>
+        <p>Current Draw: <span id="CurrentDraw">--</span></p>
+        <p>Motor Speed: <span id="MotorSpeed">--</span></p>
+      </div>
+
+      <div class="buttons-container">
+        <!-- Flight Mode Buttons -->
+        <button onclick="changeFlightMode('Manual')">Manual</button>
+        <button onclick="changeFlightMode('Auto')">Auto</button>
+        <button onclick="changeFlightMode('Loiter')">Loiter</button>
+
+        <!-- Text Entry -->
+        <input type="text" id="textInput" placeholder="Enter something..." />
+      </div>
+    </div>
+  </body>
+</html>
